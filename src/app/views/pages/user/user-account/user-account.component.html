@@ -1,6 +1,6 @@
 <form>
   <div class="row" *ngIf="this.authService.user$ | async as user">
-    <ng-container *ngIf="user && user?.avatar; else elseTemplate">
+    <ng-container *ngIf="user && user?.avatar;">
       <img [src]="user?.avatar" [alt]="user.userName" style="width: 35%; height: 35%;" />
     </ng-container>
     <div class="col-md-8 mt-3">
