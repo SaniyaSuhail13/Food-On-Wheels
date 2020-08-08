@@ -6,11 +6,11 @@ import { Title } from "@angular/platform-browser";
 })
 export class TranslateService {
   data: any = {};
-  constructor(private http: HttpClient, private titleService: Title) {}
+  constructor(private http: HttpClient, private titleService: Title) { }
 
   use(lang: string): Promise<{}> {
     return new Promise<{}>((resolve, reject) => {
-      const langPath = `assets/i18n/${lang || "en"}.json`;
+      const langPath = `assets/PageTitles/${lang || "en"}.json`;
       this.http.get<{}>(langPath).subscribe(
         (translation) => {
           this.data = Object.assign({}, translation || {});
