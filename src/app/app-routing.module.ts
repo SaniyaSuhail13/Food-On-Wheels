@@ -15,7 +15,7 @@ const routes: Routes = [
       {
         path: "dishes",
         loadChildren: () =>
-          import("./views/pages/product/dish.module").then(
+          import("./views/pages/dish/dish.module").then(
             (m) => m.DishModule
           ),
       },

@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { IndexModule } from "./views/base/index/index.module";
 import { SharedModule } from "./shared/shared.module";
 import { TranslateService } from "./shared/services/translate.service";
-import { DishModule } from "./views/pages/product/Dish.module";
+import { DishModule } from "./views/pages/dish/dish.module";
 import { UserModule } from "./views/pages/user/user.module";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";

@@ -1,6 +1,6 @@
 import { SharedModule } from "./../../../shared/shared.module";
 
-import { DishModule } from "../../pages/product/dish.module";
+import { DishModule } from "../../pages/dish/dish.module";
 // Core Dependencies
 import { RouterModule } from "@angular/router";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
