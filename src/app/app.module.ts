@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { IndexModule } from "./views/base/index/index.module";
 import { SharedModule } from "./shared/shared.module";
 import { TranslateService } from "./shared/services/translate.service";
-import { ProductModule } from "./views/pages/product/product.module";
+import { DishModule } from "./views/pages/product/Dish.module";
 import { UserModule } from "./views/pages/user/user.module";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
@@ -26,11 +26,11 @@ export function setupTranslateFactory(service: TranslateService) {
     BrowserAnimationsModule,
     AppRoutingModule,
     IndexModule,
-    ProductModule,
+    DishModule,
     UserModule,
     SharedModule,
     ServiceWorkerModule.register("./ngsw-worker.js", {
-      enabled: environment.production,
+      enabled: environment.dishion,
       registrationStrategy: "registerImmediately",
     }),
     // AngularFireModule.initializeApp(FireBaseConfig),
@@ -48,4 +48,4 @@ export function setupTranslateFactory(service: TranslateService) {
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }

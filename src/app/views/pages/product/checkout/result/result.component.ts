@@ -1,5 +1,5 @@
-import { Product } from "../../../../../shared/models/product";
-import { ProductService } from "../../../../../shared/services/product.service";
+import { Dish } from "../../../../../shared/models/dish";
+import { DishService } from "../../../../../shared/services/dish.service";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import * as jspdf from "jspdf";
 import html2canvas from "html2canvas";
@@ -10,28 +10,28 @@ declare var $: any;
   styleUrls: ["./result.component.scss"],
 })
 export class ResultComponent implements OnInit {
-  products: Product[];
+  Dishes: Dish[];
   date: number;
   totalPrice = 0;
   tax = 6.4;
 
-  constructor(private productService: ProductService) {
+  constructor(private dishService: DishService) {
     /* Hiding Billing Tab Element */
-    document.getElementById("productsTab").style.display = "none";
+    document.getElementById("DishesTab").style.display = "none";
     document.getElementById("shippingTab").style.display = "none";
     document.getElementById("billingTab").style.display = "none";
     document.getElementById("resultTab").style.display = "block";
 
-    this.products = productService.getLocalCartProducts();
+    this.Dishes = dishService.getLocalCartDishes();
 
-    this.products.forEach((product) => {
-      this.totalPrice += product.productPrice;
+    this.Dishes.forEach((dish) => {
+      this.totalPrice += dish.dishPrice;
     });
 
     this.date = Date.now();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   downloadReceipt() {
     const data = document.getElementById("receipt");

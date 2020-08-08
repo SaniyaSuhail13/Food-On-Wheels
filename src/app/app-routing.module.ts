@@ -1,5 +1,5 @@
 import { PageNotFoundComponent } from "./shared/components/page-not-found/page-not-found.component";
-import { NoAccessComponent } from "./shared/components/no-access/no-access.component";
+import { UnAuthorizedAccessComponent } from "./shared/components/unauthorized-access/unauthorized-access.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
@@ -13,10 +13,10 @@ const routes: Routes = [
           import("./views/base/index/index.module").then((m) => m.IndexModule),
       },
       {
-        path: "products",
+        path: "dishes",
         loadChildren: () =>
-          import("./views/pages/product/product.module").then(
-            (m) => m.ProductModule
+          import("./views/pages/product/dish.module").then(
+            (m) => m.DishModule
           ),
       },
       {
@@ -26,7 +26,7 @@ const routes: Routes = [
       }
     ],
   },
-  { path: "no-access", component: NoAccessComponent },
+  { path: "no-access", component: UnAuthorizedAccessComponent },
   { path: "**", component: PageNotFoundComponent },
 ];
 
@@ -34,4 +34,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

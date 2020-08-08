@@ -16,7 +16,7 @@ export class IndexComponent implements OnInit {
       bannerImg: "./assets/banner_img/img_3.jpg",
       title: "Never Settle - OnePlus",
       description:
-        " OnePlus creates beautifully designed products with premium build quality & brings the best technology to users around the world",
+        " OnePlus creates beautifully designed Dishes with premium build quality & brings the best technology to users around the world",
     },
     {
       bannerImg: "./assets/banner_img/img_4.jpg",
@@ -25,7 +25,7 @@ export class IndexComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

@@ -1,6 +1,6 @@
 import { SharedModule } from "./../../../shared/shared.module";
 
-import { ProductModule } from "../../pages/product/product.module";
+import { DishModule } from "../../pages/product/dish.module";
 // Core Dependencies
 import { RouterModule } from "@angular/router";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
@@ -17,7 +17,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 @NgModule({
   imports: [
     CommonModule,
-    ProductModule,
+    DishModule,
     SharedModule,
     RouterModule.forChild(IndexRoutes),
   ],
@@ -31,4 +31,4 @@ import { NavbarComponent } from "./navbar/navbar.component";
   exports: [NavbarComponent, FooterComponent],
   providers: [],
 })
-export class IndexModule {}
+export class IndexModule { }

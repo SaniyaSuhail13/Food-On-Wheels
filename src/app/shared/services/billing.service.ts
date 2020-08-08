@@ -26,7 +26,7 @@ export class BillingService {
   }
 
   getBillingById(key: string) {
-    this.billing = this.db.object("products/" + key);
+    this.billing = this.db.object("Dishes/" + key);
     return this.billing;
   }
 

@@ -1,11 +1,11 @@
-import { Product } from "../../../../../shared/models/product";
+import { Dish } from "../../../../../shared/models/dish";
 import { ShippingService } from "../../../../../shared/services/shipping.service";
 import { UserDetail, User } from "../../../../../shared/models/user";
 import { AuthService } from "../../../../../shared/services/auth.service";
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ProductService } from "../../../../../shared/services/product.service";
+import { DishService } from "../../../../../shared/services/dish.service";
 import { map } from "rxjs/operators";
 @Component({
   selector: "app-shipping-details",
@@ -17,42 +17,42 @@ export class ShippingDetailsComponent implements OnInit {
 
   userDetail: UserDetail;
 
-  products: Product[];
+  Dishes: Dish[];
 
   constructor(
     public authService: AuthService,
     private shippingService: ShippingService,
-    productService: ProductService,
+    dishService: DishService,
     private router: Router
   ) {
-    /* Hiding products Element */
-    document.getElementById("productsTab").style.display = "none";
+    /* Hiding Dishes Element */
+    document.getElementById("DishesTab").style.display = "none";
     document.getElementById("shippingTab").style.display = "block";
-    document.getElementById("productsTab").style.display = "none";
+    document.getElementById("DishesTab").style.display = "none";
     document.getElementById("resultTab").style.display = "none";
 
     this.userDetail = new UserDetail();
-    this.products = productService.getLocalCartProducts();
+    this.Dishes = dishService.getLocalCartDishes();
     this.authService.userDetails$.subscribe((user) => {
       this.userDetails = user;
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   updateUserDetails(form: NgForm) {
-    const products = [];
+    const Dishes = [];
     let totalPrice = 0;
-    this.products.forEach((product) => {
-      delete product.$key;
-      totalPrice += product.productPrice;
-      products.push(product);
+    this.Dishes.forEach((dish) => {
+      delete dish.$key;
+      totalPrice += dish.dishPrice;
+      Dishes.push(dish);
     });
     const data = {
       ...form.value,
       emailId: this.userDetails.emailId,
       userId: this.userDetails.$key,
-      products,
+      Dishes,
       totalPrice,
       shippingDate: Date.now(),
     };

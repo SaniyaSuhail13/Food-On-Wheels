@@ -1,0 +1,25 @@
+<div class="container">
+  <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let dish of checkoutDishes">
+      <div>
+        <img [src]="dish.dishImageUrl" [alt]="dish.dishName" width="150" height="100" />
+      </div>
+      <div style="padding: 10px;">
+        <h6 class="my-0">{{ dish.dishName }}</h6>
+        <!-- <p>Dish Seller : {{ dish.dishSeller }}</p> -->
+      </div>
+      <span class="text-muted">₹ {{ dish.dishPrice }}</span>
+    </li>
+    <hr />
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Total (INR)</span>
+      <strong>₹ {{ totalPrice }}</strong>
+    </li>
+  </ul>
+  <div class="float-right">
+    <a class="btn btn-default" [routerLink]="[
+        '/checkouts',
+        { outlets: { checkOutlet: ['shipping-details'] } }
+      ]" routerLinkActive="active">Next</a>
+  </div>
+</div>

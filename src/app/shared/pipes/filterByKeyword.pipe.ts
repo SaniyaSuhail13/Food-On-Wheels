@@ -9,8 +9,8 @@ export class FilterByKeywordPipe implements PipeTransform {
       search = search.trim();
       search = search.replace(/  +/g, " ");
       return items.filter(
-        (item: { productName: any }) =>
-          item.productName.toLowerCase().indexOf(search.toLowerCase()) >= 0
+        (item: { dishName: any }) =>
+          item.dishName.toLowerCase().indexOf(search.toLowerCase()) >= 0
       );
     } else {
       return items;

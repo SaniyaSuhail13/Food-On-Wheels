@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shopping-cart": {
+    "food-on-wheels": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -95,18 +95,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "shopping-cart:build"
+            "browserTarget": "food-on-wheels:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "shopping-cart:build:production"
+              "browserTarget": "food-on-wheels:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shopping-cart:build"
+            "browserTarget": "food-on-wheels:build"
           }
         },
         "test": {
@@ -118,10 +118,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest"
+              "src/assets"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -133,25 +134,27 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "shopping-cart:serve"
+            "devServerTarget": "food-on-wheels:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "shopping-cart:serve:production"
+              "devServerTarget": "food-on-wheels:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "shopping-cart",
+  "defaultProject": "food-on-wheels",
   "cli": {
     "analytics": ""
   }

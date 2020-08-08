@@ -2,7 +2,7 @@ import { CheckoutComponent } from "./checkout.component";
 import { ResultComponent } from "./result/result.component";
 import { ShippingDetailsComponent } from "./shipping-details/shipping-details.component";
 import { BillingDetailsComponent } from "./billing-details/billing-details.component";
-import { ProductsComponent } from "./products/products.component";
+import { DishesComponent } from "./dishes/dishes.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AuthGuard } from "../../../../shared/guards/auth_gaurd";
@@ -15,7 +15,7 @@ export const checkoutRoutes: Routes = [
     children: [
       {
         path: "",
-        component: ProductsComponent,
+        component: DishesComponent,
         outlet: "checkOutlet",
       },
       {
@@ -41,4 +41,4 @@ export const checkoutRoutes: Routes = [
   imports: [RouterModule.forChild(checkoutRoutes)],
   exports: [RouterModule],
 })
-export class CheckoutRoutingModule {}
+export class CheckoutRoutingModule { }

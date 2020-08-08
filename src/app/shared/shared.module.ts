@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { NoProductsFoundComponent } from "./components/no-products-found/no-products-found.component";
+import { NoDishesFoundComponent } from "./components/no-Dishes-found/no-Dishes-found.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
@@ -10,10 +10,10 @@ import { RouterModule, Router } from "@angular/router";
 import { OwlModule } from "ngx-owl-carousel";
 import { NgxPaginationModule } from "ngx-pagination";
 import { HttpClientModule } from "@angular/common/http";
-import { NoAccessComponent } from "./components/no-access/no-access.component";
+import { UnAuthorizedAccessComponent } from "./components/unauthorized-access/unauthorized-access.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { FilterByBrandPipe } from "./pipes/filterByBrand.pipe";
-import { ProductService } from "./services/product.service";
+import { DishService } from "./services/dish.service";
 import { AdminGaurd } from "./guards/admin-gaurd";
 import { AuthGuard } from "./guards/auth_gaurd";
 import { AuthService } from "./services/auth.service";
@@ -44,17 +44,17 @@ import { FilterByKeywordPipe } from "./pipes/filterByKeyword.pipe";
     NgxContentLoadingModule,
   ],
   declarations: [
-    NoProductsFoundComponent,
+    NoDishesFoundComponent,
     FilterByBrandPipe,
     FilterByKeywordPipe,
-    NoAccessComponent,
+    UnAuthorizedAccessComponent,
     PageNotFoundComponent,
     TranslatePipe,
     CardLoaderComponent,
     MomentTimeAgoPipe,
   ],
   exports: [
-    NoProductsFoundComponent,
+    NoDishesFoundComponent,
     FormsModule,
     MDBBootstrapModule,
     AngularFireModule,
@@ -66,7 +66,7 @@ import { FilterByKeywordPipe } from "./pipes/filterByKeyword.pipe";
     NgxPaginationModule,
     FilterByBrandPipe,
     FilterByKeywordPipe,
-    NoAccessComponent,
+    UnAuthorizedAccessComponent,
     PageNotFoundComponent,
     TranslatePipe,
     MomentTimeAgoPipe,
@@ -81,9 +81,9 @@ import { FilterByKeywordPipe } from "./pipes/filterByKeyword.pipe";
     AuthService,
     AuthGuard,
     AdminGaurd,
-    ProductService,
+    DishService,
     UserService,
     FormBuilder,
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

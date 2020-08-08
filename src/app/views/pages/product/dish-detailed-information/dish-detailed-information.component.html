@@ -1,0 +1,64 @@
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="dish-image">
+        <div class="view hm-zoom z-depth-2" style="cursor: pointer;">
+          <img [src]="dish.dishImageUrl" [alt]="dish.dishName" width="100%" class="img-fluid rounded" />
+        </div>
+        <div class="" style="margin-top: 15px;">
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Order Price</h6>
+              </div>
+              <span class="text-muted" style="color: crimson !important;">₹ {{ dish.dishPrice }}</span>
+            </li>
+            <!-- <li
+              class="list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <div>
+                <h6 class="my-0">Dish Seller</h6>
+              </div>
+              <span class="text-muted" style="color: crimson !important;">{{
+                dish.dishSeller
+              }}</span>
+            </li> -->
+          </ul>
+          <button class="btn btn-primary" (click)="addToCart(dish)">
+            Order now
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="dish-detail">
+        <h5 class="dish-head">Order Details</h5>
+        <table class="table" cellspacing="0" style="max-height: 28px;">
+          <tbody>
+            <tr>
+              <th scope="row">Item Name</th>
+              <td>{{ dish.dishName }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Item Description</th>
+              <td>{{ dish.dishDescription }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Item Category</th>
+              <td>{{ dish.dishCategory }}</td>
+            </tr>
+            <tr>
+              <th scope="row">No. of quantity available</th>
+              <td>{{ dish.dishQuatity }}</td>
+            </tr>
+            <!-- <tr>
+              <th scope="row">Item Added on</th>
+              <td>{{ dish.dishAdded * 1000 | date }}</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
