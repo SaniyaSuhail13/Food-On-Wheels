@@ -18,7 +18,7 @@
     <div class="item" style="padding: 20px;" *ngFor="let dish of bestDishes; let i = index">
       <div class="mb-r">
         <div class="card card-cascade wider">
-          <a [routerLink]="['/Dishes/dish', dish.$key]">
+          <a [routerLink]="['/dishes/dish', dish.$key]">
             <div class="view overlay hm-white-slight">
               <img [src]="dish.dishImageUrl" class="img-fluid" alt="" width="360px" height="640px" />
               <a>
@@ -32,7 +32,7 @@
             </a>
             <h5 class="card-title">
               <strong>
-                <a [routerLink]="['/Dishes/dish', dish.$key]">{{
+                <a [routerLink]="['/dishes/dish', dish.$key]">{{
                   dish.dishName
                 }}</a>
               </strong>
