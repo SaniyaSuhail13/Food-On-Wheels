@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Dish } from "../../../../shared/models/dish";
 import { AuthService } from "../../../../shared/services/auth.service";
 import { DishService } from "../../../../shared/services/dish.service";
-import { ToastrService } from "src/app/shared/services/toastr.service";
+import { ToastrService } from "../../../../shared/services/toastr.service";
 @Component({
   selector: "app-dishes",
   templateUrl: "./dishes.component.html",
@@ -37,7 +37,9 @@ export class DishesComponent implements OnInit {
         dish.forEach((element) => {
           const y = { ...element.payload.toJSON(), $key: element.key };
           this.dishList.push(y as Dish);
-          this.brands.push((y as Dish).dishCategory);
+          if (this.brands.indexOf((y as Dish).dishCategory) < 0) {
+            this.brands.push((y as Dish).dishCategory);
+          }
         });
       },
       (err) => {
