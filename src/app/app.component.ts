@@ -7,7 +7,7 @@ declare var $: any;
   selector: "app-root",
   template: `
     <div class="container">
-      <app-navbar></app-navbar>
+      <app-header></app-header>
 
       <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
         <router-outlet #o="outlet"></router-outlet>
@@ -21,7 +21,7 @@ declare var $: any;
   animations: [fadeAnimation],
 })
 export class AppComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     $(".banner").owlCarousel({
