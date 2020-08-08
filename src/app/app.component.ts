@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "./shared/services/user.service";
-import { fadeAnimation } from "./shared/animations/fadeIntRoute";
 declare var $: any;
 
 @Component({
@@ -9,7 +8,7 @@ declare var $: any;
     <div class="container">
       <app-header></app-header>
 
-      <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+      <main>
         <router-outlet #o="outlet"></router-outlet>
       </main>
 
@@ -17,8 +16,7 @@ declare var $: any;
       <app-loader-spinner></app-loader-spinner>
     </div>
   `,
-  styleUrls: ["./app.component.scss"],
-  animations: [fadeAnimation],
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
   constructor(private userService: UserService) { }
