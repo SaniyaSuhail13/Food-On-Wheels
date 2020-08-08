@@ -4,7 +4,6 @@
   <ul class="nav nav-tabs" id="myTab">
     <div class="liner"></div>
 
-    <!-- circular user icon -->
     <li id="DishesTab" style="margin: auto;">
       <a [routerLink]="['/checkouts', { outlets: { checkOutlet: ['/'] } }]" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="Dish Summary">
@@ -14,7 +13,6 @@
       </a>
     </li>
 
-    <!-- circular tasks icon -->
     <li id="shippingTab" style="margin: auto;">
       <a [routerLink]="[
           '/checkouts',
@@ -26,7 +24,6 @@
       </a>
     </li>
 
-    <!-- circular home icon -->
     <li id="billingTab" style="margin: auto;">
       <a [routerLink]="[
           '/checkouts',
@@ -38,7 +35,6 @@
       </a>
     </li>
 
-    <!-- circular ok icon -->
     <li id="resultTab" style="margin: auto;">
       <a [routerLink]="['/checkouts', { outlets: { checkOutlet: ['result'] } }]" routerLinkActive="active"
         data-toggle="tab" title="Payment">
