@@ -8,22 +8,22 @@ import { DishDetailedInformationComponent } from "./dish-detailed-information/di
 
 export const dishRoutes: Routes = [
   {
-    path: "Dishes",
+    path: "dishes",
     children: [
       {
         path: "",
         component: IndexComponent,
       },
       {
-        path: "all-Dishes",
+        path: "all-dishes",
         component: DishesComponent,
       },
       {
-        path: "favourite-Dishes",
+        path: "favourite-dishes",
         component: FavouriteDishesComponent,
       },
       {
-        path: "cart-items",
+        path: "cart-dishes",
         component: CartDishesComponent,
       },
       {
