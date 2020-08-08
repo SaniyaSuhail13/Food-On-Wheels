@@ -12,7 +12,7 @@ import { IndexRoutes } from "./index.routing";
 import { IndexComponent } from "./index.component";
 import { LoginComponent } from "./login/login.component";
 import { FooterComponent } from "./footer/footer.component";
-import { NavbarComponent } from "./navbar/navbar.component";
+import { HeaderComponent } from "./header/header.component";
 
 @NgModule({
   imports: [
@@ -23,12 +23,12 @@ import { NavbarComponent } from "./navbar/navbar.component";
   ],
   declarations: [
     IndexComponent,
-    NavbarComponent,
+    HeaderComponent,
     LoginComponent,
     FooterComponent,
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  exports: [NavbarComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent],
   providers: [],
 })
 export class IndexModule { }

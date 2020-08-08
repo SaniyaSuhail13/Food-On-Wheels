@@ -8,11 +8,11 @@ import { ThemeService } from "src/app/shared/services/theme.service";
 declare var $: any;
 
 @Component({
-  selector: "app-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"],
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
-export class NavbarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   angularVersion = VERSION;
 
   colorPallet1 = [
@@ -55,10 +55,10 @@ export class NavbarComponent implements OnInit {
     public translate: TranslateService,
     private themeService: ThemeService
   ) {
-    // console.log(translate.data);
   }
 
   ngOnInit() { }
+
   logout() {
     this.authService.logout();
     this.router.navigate(["/"]);
