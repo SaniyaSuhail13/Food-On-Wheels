@@ -8,11 +8,6 @@
       </blockquote>
     </div>
   </div>
-
-  <div *ngIf="loading">
-    <app-card-loader [loop]="4" [height]="500"></app-card-loader>
-  </div>
-
   <owl-carousel *ngIf="!loading" [options]="options" [items]="bestDishes"
     [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <div class="item" style="padding: 20px;" *ngFor="let dish of bestDishes; let i = index">

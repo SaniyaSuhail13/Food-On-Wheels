@@ -20,7 +20,6 @@ import { AuthService } from "./services/auth.service";
 import { UserService } from "./services/user.service";
 import { TranslatePipe } from "./pipes/translate.pipe";
 import { NgxContentLoadingModule } from "ngx-content-loading";
-import { CardLoaderComponent } from "./components/card-loader/card-loader.component";
 import { MomentTimeAgoPipe } from "./pipes/moment-time-ago.pipe";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
@@ -50,7 +49,6 @@ import { FilterByKeywordPipe } from "./pipes/filterByKeyword.pipe";
     UnAuthorizedAccessComponent,
     PageNotFoundComponent,
     TranslatePipe,
-    CardLoaderComponent,
     MomentTimeAgoPipe,
   ],
   exports: [
@@ -71,7 +69,6 @@ import { FilterByKeywordPipe } from "./pipes/filterByKeyword.pipe";
     TranslatePipe,
     MomentTimeAgoPipe,
     NgxContentLoadingModule,
-    CardLoaderComponent,
     CdkTableModule,
     CdkTreeModule,
     DragDropModule,

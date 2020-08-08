@@ -26,7 +26,6 @@
     </div>
     <div class="col-md-9">
       <div class="container">
-        <app-card-loader [loop]="3" [height]="800" *ngIf="loading"></app-card-loader>
         <div class="row" *ngIf="!loading">
           <div class="col-sm-4 mb-2" *ngFor="
               let dish of dishList
